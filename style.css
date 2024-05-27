@@ -1,0 +1,128 @@
+body {
+    background-color: #fad7df;
+  }
+  
+  main {
+    margin-top: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container-letter {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: relative;
+    width: 100%; /* Ajusta el ancho según sea necesario */
+  }
+  
+  
+  .cover {
+    position: absolute;
+    border-left: 400px solid transparent;
+    border-right: 400px solid transparent;
+    border-top: 250px solid #fe3334;
+    border-bottom: 250px solid transparent;
+    transition: transform .75s;
+    transform-origin: top;
+    z-index: 2; /* Asegúrate de que la tapa esté por encima del texto inicialmente */
+  }
+  
+  .paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 1.5rem;
+    background: white;
+    width: 700px;
+    /* Eliminamos la altura fija */
+    /* height: 180px; */
+    transition: all .75s;
+    z-index: -1; /* Asegúrate de que el papel esté detrás de la tapa */
+  }
+  
+  
+  
+  .letter {
+    border-left: 400px solid #ff989e;
+    border-right: 400px solid #ff989e;
+    border-top: 250px solid transparent;
+    border-bottom: 250px solid #ff858a;
+  }
+  
+  .options {
+    display: flex;
+    gap: 5rem;
+  }
+  
+  .options button {
+    color: #ff3234;
+    font-weight: 600px;
+    border-radius: 3px;
+    background: #fad7df;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fe3334;
+    cursor: pointer;
+  }
+  
+  .options button:hover {
+    background: #ff989e;
+    color: white;
+  }
+  
+  .open-cover {
+    transform: rotatex(180deg);
+    z-index: 1; /* Asegúrate de que la tapa esté detrás del papel durante la animación */
+  }
+  
+  .open-paper {
+    animation: openPaper .5s forwards;
+  }
+  
+  @keyframes openPaper {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -390px;
+    }
+  }
+  
+  .close-paper {
+    animation: closePaper .5s forwards;
+  }
+  
+  @keyframes closePaper {
+    0% {
+      top: -120px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  .heart {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 46.5%;
+    margin: auto;
+    font-size: 3rem;
+    color: #fe3334;
+    animation: crecer 1s forwards;
+  }
+  
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+    }
+  }
+  
